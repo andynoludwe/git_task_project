@@ -72,7 +72,7 @@ As a **Junior Data Analyst**, the goal was to identify top-performing products, 
 **Your Name**  
 Junior Data Analyst | Data Visualization Enthusiast  
 📧 andynoludwe@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/andisiwe-noludwe-6829a616a/?trk=opento_sprofile_details) • [Portfolio](https://github.com/yourusername)
+🔗 [LinkedIn](https://www.linkedin.com/in/andisiwe-noludwe-6829a616a/?trk=opento_sprofile_details) • [Portfolio](https://github.com/andynoludwe)
 
 ---
 
