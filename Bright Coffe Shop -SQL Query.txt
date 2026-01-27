@@ -1,0 +1,66 @@
+--- To extract raw data 
+SELECT
+  *
+FROM
+  "BRIGHT"."COFFE_SHOP"."BRIGHT_COFFEE_SHOP"
+LIMIT
+  10;
+  _____________________________
+  
+--- To find out different types of catergories 
+  SELECT DISTINCT PRODUCT_CATEGORY
+  FROM "BRIGHT"."COFFE_SHOP"."BRIGHT_COFFEE_SHOP"
+  GROUP BY PRODUCT_CATEGORY
+ _______________________________
+ --- Name and number of stores we have 
+ SELECT STORE_LOCATION
+ FROM "BRIGHT"."COFFE_SHOP"."BRIGHT_COFFEE_SHOP"
+ GROUP BY STORE_LOCATION
+ _____________________________________
+ SELECT DISTINCT store_id
+ FROM "BRIGHT"."COFFE_SHOP"."BRIGHT_COFFEE_SHOP"
+ GROUP BY STORE_ID
+ _______________________________________________
+ SELECT PRODUCT_TYPE
+ FROM "BRIGHT"."COFFE_SHOP"."BRIGHT_COFFEE_SHOP"
+ GROUP BY PRODUCT_TYPE
+ ___________________________________________________
+ 
+ ---Viewing the number of detailed products
+
+ SELECT PRODUCT_DETAIL
+ FROM "BRIGHT"."COFFE_SHOP"."BRIGHT_COFFEE_SHOP"
+ GROUP BY PRODUCT_DETAIL
+ _____________________________________________________ 
+---Check opening time 
+ SELECT MIN(transaction_time) AS openig_time
+ FROM "BRIGHT"."COFFE_SHOP"."BRIGHT_COFFEE_SHOP"
+ _______________________________________________
+ ---Check closing time 
+ SELECT MAX(transaction_time) AS closing_time
+ FROM "BRIGHT"."COFFE_SHOP"."BRIGHT_COFFEE_SHOP"
+ _________________________________________
+ 
+SELECT transaction_date,
+    DAYNAME(transaction_date) AS day_name,
+CASE
+    WHEN DAYNAME(transaction_date) IN ('Mon','Fri') THEN 'Weekdays'
+    ELSE 'Weekend'
+       END AS day_classification,
+MONTHNAME(transaction_date) AS month_name,
+         transaction_time,
+CASE
+    WHEN transaction_time BETWEEN '06:00:00' AND '11:59:00' THEN 'Morning'
+    WHEN transaction_time BETWEEN '12:00:00' AND '16:59:00' THEN 'Afternoon'
+    WHEN transaction_time >='17:00:00' THEN 'Evining'
+        END AS time_period,
+        HOUR(transaction_time) AS Hour_of_the_day,
+        store_location,
+        product_category,
+        product_detail,
+        product_type,
+        unit_price,
+     SUM(transaction_qty * unit_price) AS Revenue
+    FROM "BRIGHT"."COFFE_SHOP"."BRIGHT_COFFEE_SHOP"
+    GROUP BY ALL;
+    __________________
