@@ -1,4 +1,4 @@
-# ☕ Bright Coffee Shop Sales Analysis
+# ☕ Bright Coffee Shop Sales Analysis SQL & Power BI
 
 ### 🚀 Project Overview
 This project analyzes historical sales data from **Bright Coffee Shop** to uncover key business insights for the newly appointed CEO.  
